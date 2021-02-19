@@ -1,0 +1,5 @@
+make:
+	nasm -f win64 adjuststack.asm -o adjuststack.o
+	x86_64-w64-mingw32-gcc ApiResolve.c -Wall -m64 -ffunction-sections -fno-asynchronous-unwind-tables -nostdlib -fno-ident -O2 -c -o ApiResolve.o -Wl,--no-seh
+	x86_64-w64-mingw32-gcc HelloWorld.c -Wall -m64 -masm=intel -ffunction-sections -fno-asynchronous-unwind-tables -nostdlib -fno-ident -O2 -c -o HelloWorld.o -Wl,--no-seh
+	x86_64-w64-mingw32-ld -s adjuststack.o ApiResolve.o HelloWorld.o -o HelloWorld.exe
