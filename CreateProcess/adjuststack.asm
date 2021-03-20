@@ -1,4 +1,4 @@
-; Based on http://www.exploit-monday.com/2013/08/writing-optimized-windows-shellcode-in-c.html
+; Based on http://www.exploit-monday.com/2013/08/writing-optimized-windows-shellcode-in-c.html and https://bruteratel.com/research/feature-update/2021/01/30/OBJEXEC/
 
 extern go
 global alignstack
